@@ -1,0 +1,44 @@
+<!--
+Retirado de:
+http://dynamicdrive.com/dynamicindex16/disableenter.htm
+
+Step 1: Add the below script to the <HEAD> section of your page:
+-->
+
+<script type="text/javascript">
+
+/***********************************************
+* Disable "Enter" key in Form script- By Nurul Fadilah(nurul@REMOVETHISvolmedia.com)
+* This notice must stay intact for use
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+                
+function handleEnter (field, event) {
+		var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+		if (keyCode == 13) {
+			var i;
+			for (i = 0; i < field.form.elements.length; i++)
+				if (field == field.form.elements[i])
+					break;
+			i = (i + 1) % field.form.elements.length;
+			field.form.elements[i].focus();
+			return false;
+		} 
+		else
+		return true;
+	}      
+
+</script>
+
+
+<!--
+Step 2: Now, inside the form fields you wish to disable the "Enter" key and 
+advance focus to the next field instead, simply add the below "onkeypress" event handler inside its tag as follows:
+
+<form>
+<input type="text" onkeypress="return handleEnter(this, event)"><br>
+<input type="text" onkeypress="return handleEnter(this, event)"><br>
+<textarea>Some text</textarea>
+</form>
+
+-->
