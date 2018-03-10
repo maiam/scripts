@@ -5,6 +5,7 @@ http://dynamicdrive.com/dynamicindex16/disableenter.htm
 Step 1: Add the below script to the <HEAD> section of your page:
 -->
 
+
 <script type="text/javascript">
 
 /***********************************************
